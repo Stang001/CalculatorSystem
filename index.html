@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณไฟที่ได้จาก Steam Turbine</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-image: url('./Images/opoy7.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        #navbar{
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="navbar" class="navbar bg-base-100">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl">CalcSys2</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="./index.htm">CalcSys1</a></li>
+            <li><a href="./index.html">CalcSys2</a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-lg">
+        <h1 class="text-3xl font-semibold text-center mb-6">ระบบคำนวณพลังงาน<br>จาก Steam Turbine</h1>
+        <div class="space-y-4">
+            <div>
+                <label for="massFlowRate" class="block text-lg font-medium">อัตราการไหลของไอน้ำ (dot m) (kg/s)</label>
+                <input type="number" id="massFlowRate" class="input input-bordered w-full" placeholder="( Water Flow Rate กิโลกรัมต่อวินาที) ตัวอย่าง : 10kg/(s)"/>
+            </div>
+            <div>
+                <label for="enthalpy1" class="block text-lg font-medium">ความหนาแน่นของไอน้ำก่อน Turbine (h1) (kJ/kg)</label>
+                <input type="number" id="enthalpy1" class="input input-bordered w-full" placeholder="ตัวอย่าง : 2800 กิโลจูล/กิโลกรัม"/>
+            </div>
+            <div>
+                <label for="enthalpy2" class="block text-lg font-medium">ความหนาแน่นของไอน้ำหลัง Turbine (h2) (kJ/kg)</label>
+                <input type="number" id="enthalpy2" class="input input-bordered w-full" placeholder="ตัวอย่าง : 2100 กิโลจูล/กิโลกรัม"/>
+            </div>
+            <div>
+                <label for="powerOutput" class="block text-lg font-medium">กำลังไฟฟ้าที่ผลิตได้ (Watt)</label>
+                <input type="text" id="powerOutput" class="input input-bordered w-full bg-gray-200 cursor-not-allowed" readonly/>
+            </div>
+            <div class="text-center">
+                <button onclick="calculatePowerOutput()" class="btn btn-primary w-full">คำนวณกำลังไฟที่ได้</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
